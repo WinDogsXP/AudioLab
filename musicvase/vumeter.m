@@ -17,7 +17,7 @@ function vumeter(y, fs, fig)
     end
     
     % figure settings
-    % zlim([0, 10]);
+    zlim(fig, [0, 10]);
     
     rmsValues = rmsValues / max(rmsValues);
     
@@ -29,8 +29,7 @@ function vumeter(y, fs, fig)
     for i = 1:noFrame
         if isplaying(player)
             val = round(rmsValues(i) * 10);
-            
-            cla;
+            cla(fig);
             
             az = mod(az + 2, 360);
             view(fig, az, el);

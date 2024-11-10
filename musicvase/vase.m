@@ -1,4 +1,4 @@
-function vase(r, R, n, N, h)
+function vase(fig, r, R, n, N, h)
 %VASE Draws a vase
 %   r = small radius
 %   R = big radius
@@ -8,7 +8,7 @@ function vase(r, R, n, N, h)
 
 hp = h / N;     % height of each slice
 
-hold("on");
+hold(fig, "on");
 
 for i = 0:(N-1)
     k = mod(i, 3);
@@ -23,10 +23,10 @@ for i = 0:(N-1)
 
     [xp, yp, zp] = cylinder(vv, n);
     zp = (zp + i) * hp;
-    surf(xp, yp, zp);
+    surf(fig, xp, yp, zp);
 end
 
-hold("off");
+hold(fig, "off");
 
 end
 

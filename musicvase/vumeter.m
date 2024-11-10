@@ -35,6 +35,8 @@ function vumeter(y, fs, fig)
             view(fig, az, el);
             vase(fig, 0.75, 1, 8, val, val);
             pause(frLen * 0.9);
+        elseif stop == 1
+            break;
         else
             break;
         end
